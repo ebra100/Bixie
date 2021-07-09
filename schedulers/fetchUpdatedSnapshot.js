@@ -1,13 +1,12 @@
 var cron = require('node-cron');
 const Snapshot = require("../models/snapshot");
 const SnapshotGroup = require("../models/snapshot_group");
-const { Op } = require("sequelize");
 const Station = require("../models/station");
 
 const axios = require("axios");
 const { v4: uuidv4 } = require('uuid');
 
-cron.schedule('0 * * * *', async () => {
+cron.schedule('0 0 */1 * * *', async () => {
 
     console.log('running a task every hour');
 

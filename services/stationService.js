@@ -2,7 +2,7 @@ const Snapshot = require("../models/snapshot");
 const Station = require("../models/station");
 const SnapshotGroup = require("../models/snapshot_group")
 const { Op } = require("sequelize");
-const { Sequelize } = require('sequelize');
+var _ = require('lodash');
 
 module.exports = {
 
@@ -34,7 +34,6 @@ module.exports = {
         formattedResponse['at'] = snapshot.createdAt;
         formattedResponse['weather'] = snapshot.weather;
         formattedResponse['stations'] = [];
-
 
         for (let index = 0; index < snapshot.Snapshots.length; index++) {
 
