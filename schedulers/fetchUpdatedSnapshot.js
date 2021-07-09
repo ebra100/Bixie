@@ -7,7 +7,7 @@ const Station = require("../models/station");
 const axios = require("axios");
 const { v4: uuidv4 } = require('uuid');
 
-cron.schedule('* */1 * * *', async () => {
+cron.schedule('0 * * * *', async () => {
 
     console.log('running a task every hour');
 
